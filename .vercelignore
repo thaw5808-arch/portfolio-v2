@@ -3,3 +3,4 @@ scripts
 AGENTS.md
 .next
 node_modules
+out

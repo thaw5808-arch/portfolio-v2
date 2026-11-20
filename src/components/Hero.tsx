@@ -8,6 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Nav from "./Nav";
 import GradientPill from "./GradientPill";
 import { DURATION, EASE, MOTION_OK, STAGGER } from "@/lib/motion";
+import { asset } from "@/lib/paths";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -66,7 +67,7 @@ export default function Hero() {
           transition={{ duration: DURATION.slow, ease: EASE, delay: 0.3 }}
         >
           <Image
-            src="/img/tim-cutout.png"
+            src={asset("/img/tim-cutout.png")}
             alt="Portrait of Tim"
             width={768}
             height={775}

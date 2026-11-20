@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { FOOTER_SHAPES } from "./Shapes";
 import { EMAIL } from "@/lib/projects";
+import { asset } from "@/lib/paths";
 import { DURATION, EASE_OVERSHOOT, STAGGER } from "@/lib/motion";
 
 export default function Footer() {
@@ -33,7 +34,7 @@ export default function Footer() {
                 <a href="#">Figma</a>
               </li>
               <li>
-                <a href="/resume.pdf" target="_blank" rel="noopener">
+                <a href={asset("/resume.pdf")} target="_blank" rel="noopener">
                   Résumé
                 </a>
               </li>

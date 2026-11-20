@@ -28,9 +28,13 @@ const TITLE = "Thaw Zin Htut — UI/UX Designer & Front-End Developer";
 const DESCRIPTION =
   "Portfolio of Thaw Zin Htut (Tim), a UI/UX designer and front-end developer from Bangkok who designs in Figma and builds with React and Next.js.";
 
-const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
-  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-  : "http://localhost:3000";
+// GitHub Pages sets NEXT_PUBLIC_SITE_URL (with its /portfolio-v2 path);
+// metadataBase's path is joined to relative URLs like /og.jpg.
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "http://localhost:3000");
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

@@ -6,6 +6,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { GALLERY } from "@/lib/projects";
 import { MOTION_OK } from "@/lib/motion";
+import { asset } from "@/lib/paths";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -26,7 +27,7 @@ function Row({ items, rowRef, start }: { items: Key[]; rowRef: React.Ref<HTMLDiv
           const isCopy = copy > 0;
           return (
             <div key={`${copy}-${i}`} className="gallery__item zoom" aria-hidden={isCopy || undefined}>
-              <Image src={shot.src} alt={isCopy ? "" : shot.alt} fill sizes="300px" />
+              <Image src={asset(shot.src)} alt={isCopy ? "" : shot.alt} fill sizes="300px" />
             </div>
           );
         }),

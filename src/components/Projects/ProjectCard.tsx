@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { Project } from "@/lib/projects";
+import { asset } from "@/lib/paths";
 
 type Props = {
   project: Project;
@@ -36,12 +37,12 @@ export default function ProjectCard({ project, index, total }: Props) {
         </div>
         <div className="card__body card__media" data-card-media>
           <div className="card__img card__img--main zoom">
-            <Image src={project.main.src} alt={project.main.alt} fill sizes="(max-width: 768px) 90vw, 60vw" />
+            <Image src={asset(project.main.src)} alt={project.main.alt} fill sizes="(max-width: 768px) 90vw, 60vw" />
           </div>
           <div className="card__side">
             {project.side.map((shot) => (
               <div key={shot.src} className="card__img zoom">
-                <Image src={shot.src} alt={shot.alt} fill sizes={imgSizes} />
+                <Image src={asset(shot.src)} alt={shot.alt} fill sizes={imgSizes} />
               </div>
             ))}
           </div>
